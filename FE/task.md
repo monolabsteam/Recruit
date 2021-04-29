@@ -42,7 +42,7 @@
 
 ### 제출 방식 및 깃헙 규칙
 
-- 본인 GitHub에서 저장소를 public으로 생성해서 진행해주세요.
+- 제공한 **repository**를 **fork**하여 진행해주세요.
 - 커밋 메시지 등 모든 내용은 [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) 컨벤션을 따라 영어로 작성해주세요.
 - 커밋 단위, 브랜칭 전략, Issue, PR 등의 사용은 자유롭게 해주시면 됩니다.
 - 최종 제출 시 깃헙 저장소 링크를 이메일로 제출해주세요.
