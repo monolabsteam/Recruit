@@ -42,6 +42,9 @@ const DescArticleStyle = styled("article", {
 
     "& a": {
       textDecoration: "none",
+      "&:visited": {
+        color: "blue",
+      },
       "& img": {
         width: "15px",
         height: "15px",
