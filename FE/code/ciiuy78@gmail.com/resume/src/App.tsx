@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Main from "src/views/Main";
+import Interest from "src/views/Interest";
+import Career from "src/views/Career";
+import Project from "src/views/Project";
+import Stack from "src/views/Stack";
+import SideBar from "src/components/SideBar";
+import { styled } from "@stitches/react";
 
-function App() {
+const WrapperMainStyle = styled("main", {});
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <WrapperMainStyle>
+      <Main />
+      <Career />
+      <Project />
+      <Stack />
+      <Interest />
+      <SideBar />
+    </WrapperMainStyle>
   );
-}
+};
 
 export default App;
