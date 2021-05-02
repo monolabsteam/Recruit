@@ -31,7 +31,7 @@ const AccordionDivStyle = styled("div", {
 });
 
 const Accordion: React.FC<IArchordionProps> = (props) => {
-  const { accordionTitle, accordionDesc } = props;
+  const { accordionTitle, accordionDesc, size = "md" } = props;
 
   const [isShow, setIsShow] = useState<boolean>(false);
 
@@ -42,7 +42,7 @@ const Accordion: React.FC<IArchordionProps> = (props) => {
   };
 
   return (
-    <AccordionDivStyle size="md">
+    <AccordionDivStyle size={size}>
       <button type="button" onClick={onClickArcordionBtn}>
         {accordionTitle}
       </button>
@@ -61,12 +61,15 @@ const AccordionList: React.FC<IArchordionListProps> = (props) => {
   return <div className="accordion-list-desc">{accordionDesc}</div>;
 };
 
+type Size = "sm" | "md" | "lg";
+
 interface IArchordionListProps {
   accordionDesc?: String;
 }
 
 interface IArchordionProps extends IArchordionListProps {
   accordionTitle: String;
+  size?: Size;
 }
 
 export default Accordion;

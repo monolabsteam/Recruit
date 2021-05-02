@@ -40,41 +40,43 @@ const Project: React.FC = () => {
   return (
     <SectionStyle>
       <Header>Project</Header>
-      <ul>
-        <ButtonWrapperDivStyle>
-          <button type="button" onClick={() => onClickModalOpen("Hana")}>
-            Hana
-          </button>
-        </ButtonWrapperDivStyle>
-      </ul>
-      <ul>
-        <ButtonWrapperDivStyle>
-          <button type="button" onClick={() => onClickModalOpen("DSRS")}>
-            Doosan
-          </button>
-        </ButtonWrapperDivStyle>
-      </ul>
-      <ul>
-        <ButtonWrapperDivStyle>
-          <button type="button" onClick={() => onClickModalOpen("LIG")}>
-            Let It Go
-          </button>{" "}
-        </ButtonWrapperDivStyle>
-      </ul>
-      <ul>
-        <ButtonWrapperDivStyle>
-          <button type="button" onClick={() => onClickModalOpen("FC")}>
-            Food Curation
-          </button>{" "}
-        </ButtonWrapperDivStyle>
-      </ul>
-      <ul>
-        <ButtonWrapperDivStyle>
-          <button type="button" onClick={() => onClickModalOpen("CC")}>
-            Code Coworker
-          </button>{" "}
-        </ButtonWrapperDivStyle>
-      </ul>
+      <article>
+        <ul>
+          <ButtonWrapperDivStyle>
+            <button type="button" onClick={() => onClickModalOpen("Hana")}>
+              Hana
+            </button>
+          </ButtonWrapperDivStyle>
+        </ul>
+        <ul>
+          <ButtonWrapperDivStyle>
+            <button type="button" onClick={() => onClickModalOpen("DSRS")}>
+              Doosan
+            </button>
+          </ButtonWrapperDivStyle>
+        </ul>
+        <ul>
+          <ButtonWrapperDivStyle>
+            <button type="button" onClick={() => onClickModalOpen("LIG")}>
+              Let It Go
+            </button>{" "}
+          </ButtonWrapperDivStyle>
+        </ul>
+        <ul>
+          <ButtonWrapperDivStyle>
+            <button type="button" onClick={() => onClickModalOpen("FC")}>
+              Food Curation
+            </button>{" "}
+          </ButtonWrapperDivStyle>
+        </ul>
+        <ul>
+          <ButtonWrapperDivStyle>
+            <button type="button" onClick={() => onClickModalOpen("CC")}>
+              Code Coworker
+            </button>{" "}
+          </ButtonWrapperDivStyle>
+        </ul>
+      </article>
       <Modal
         title={title}
         period={period}
