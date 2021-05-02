@@ -5,20 +5,6 @@ import { CareerData } from "src/data/Career";
 import { SectionStyle } from "src/styles/Common";
 import { styled } from "@stitches/react";
 
-const CareerArticleStyle = styled("article", {
-  border: "1px solid black",
-  borderRadius: "5px",
-
-  "& ul": {
-    borderBottom: "1px solid black",
-    margin: "0",
-    padding: "0",
-  },
-  "& ul:last-child": {
-    borderBottom: "none",
-  },
-});
-
 const Career: React.FC = () => {
   return (
     <SectionStyle id="career">
@@ -37,5 +23,19 @@ const Career: React.FC = () => {
     </SectionStyle>
   );
 };
+
+const CareerArticleStyle = styled("article", {
+  border: "1px solid black",
+  borderRadius: "5px",
+
+  "& ul": {
+    borderBottom: "1px solid black",
+    margin: "0",
+    padding: "0",
+  },
+  "& ul:last-child": {
+    borderBottom: "none",
+  },
+});
 
 export default Career;

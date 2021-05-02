@@ -1,4 +1,4 @@
-import { IModal, IProjectKeys } from "../model/modal";
+import { IModal, IProjectKeys, ISimpleProject } from "../model/modal";
 
 const HanaData: IModal = {
   title: "HanaBank Annotator & Admin",
@@ -22,6 +22,7 @@ const LIGData: IModal = {
   positions: ["Web Develop"],
   stacks: ["Vue", "VueX"],
   prize: "SSAFY 전국 3등",
+  link: "https://github.com/hopehappy92/LET-IT-GO",
 };
 const FCData: IModal = {
   title: "Food Curation",
@@ -31,6 +32,7 @@ const FCData: IModal = {
   positions: ["Web Develop, Word Cloud (TF-IDF)"],
   stacks: ["Vue", "VueX", "Python"],
   prize: "SSAFY 구미 1등",
+  link: "https://github.com/hopehappy92/FoodCuration",
 };
 const CCData: IModal = {
   title: "Code Coworker",
@@ -40,14 +42,38 @@ const CCData: IModal = {
   positions: ["Web Develop"],
   stacks: ["Vue", "VueX"],
   prize: "SSAFY 구미 3등",
+  link: "https://github.com/hopehappy92/CodeCowokers",
 };
 
 const DataSet: IProjectKeys = {
-  HanaData: HanaData,
-  DSRSData: DSRSData,
-  LIGData: LIGData,
-  FCData: FCData,
-  CCData: CCData,
+  Hana: HanaData,
+  DSRS: DSRSData,
+  LIG: LIGData,
+  FC: FCData,
+  CC: CCData,
 };
 
-export { HanaData, DSRSData, LIGData, FCData, CCData, DataSet };
+const simpleDataSet: ISimpleProject[] = [
+  {
+    title: "HanaBank Annotator & Admin",
+    short: "Hana",
+  },
+  {
+    title: "Doosan Mecatech DSRS",
+    short: "DSRS",
+  },
+  {
+    title: "Let It Go",
+    short: "LIG",
+  },
+  {
+    title: "Food Curation",
+    short: "FC",
+  },
+  {
+    title: "Code Coworker",
+    short: "CC",
+  },
+];
+
+export { HanaData, DSRSData, LIGData, FCData, CCData, DataSet, simpleDataSet };

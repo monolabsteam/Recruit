@@ -1,45 +1,6 @@
 import React, { useState } from "react";
 import { styled } from "@stitches/react";
 
-const AsideStyle = styled("aside", {
-  position: "fixed",
-  top: "calc(50% - 80px)",
-  right: "50px",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "flex-end",
-
-  "& .sidebar-inner-wrapper": {
-    display: "flex",
-    alignItems: "center",
-    height: "20px",
-  },
-  "& .sidebar-target": {
-    fontSize: "12px",
-    marginRight: "10px",
-    cursor: "pointer",
-  },
-  "& .visible": {
-    display: "block",
-  },
-  "& .invisible": {
-    display: "none",
-  },
-  "& button": {
-    width: "10px",
-    height: "10px",
-    borderRadius: "50%",
-    border: "none",
-    backgroundColor: "black",
-    cursor: "pointer",
-  },
-  "& .sidebar-line": {
-    height: "15px",
-    border: "1px dashed",
-    marginRight: "5px",
-  },
-});
-
 const ScrollTargets: string[] = [
   "main",
   "career",
@@ -94,5 +55,44 @@ const SideBar: React.FC = () => {
     </AsideStyle>
   );
 };
+
+const AsideStyle = styled("aside", {
+  position: "fixed",
+  top: "calc(50% - 80px)",
+  right: "50px",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "flex-end",
+
+  "& .sidebar-inner-wrapper": {
+    display: "flex",
+    alignItems: "center",
+    height: "20px",
+  },
+  "& .sidebar-target": {
+    fontSize: "12px",
+    marginRight: "10px",
+    cursor: "pointer",
+  },
+  "& .visible": {
+    display: "block",
+  },
+  "& .invisible": {
+    display: "none",
+  },
+  "& button": {
+    width: "10px",
+    height: "10px",
+    borderRadius: "50%",
+    border: "none",
+    backgroundColor: "black",
+    cursor: "pointer",
+  },
+  "& .sidebar-line": {
+    height: "15px",
+    border: "1px dashed",
+    marginRight: "5px",
+  },
+});
 
 export default SideBar;

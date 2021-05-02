@@ -1,49 +1,10 @@
 import React, { useCallback, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
+import { ButtonStyle } from "src/styles/Common";
 import { IModal } from "src/model/modal";
 import { styled } from "@stitches/react";
 
-const WrapperModalStyle = styled("div", {
-  position: "fixed",
-  top: "0",
-  left: "0",
-  width: "100%",
-  height: "100%",
-  backgroundColor: "rgba(0,0,0,0.5)",
-  paddingTop: "25vh",
-
-  "&.visible": {
-    display: "block",
-  },
-  "&.invisible": {
-    display: "none",
-  },
-});
-
-const ModalMainStyle = styled("main", {
-  width: "600px",
-  height: "300px",
-  backgroundColor: "white",
-  borderRadius: "10px",
-  margin: "auto",
-  padding: "20px",
-});
-
-const ModalHeaderStyle = styled("header", {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-});
-
-const ModalSectionStyle = styled("section", {
-  display: "flex",
-});
-
-const ModalAsideStyle = styled("aside", {
-  width: "30%",
-});
-
-const ModalArticleStyle = styled("article", {});
+import LinkImage from "src/assets/images/link.png";
 
 const Modal: React.FC<ModalProps> = (props) => {
   const {
@@ -54,6 +15,7 @@ const Modal: React.FC<ModalProps> = (props) => {
     positions,
     stacks,
     prize,
+    link,
     showTarget,
     setShowTarget,
   } = props;
@@ -93,17 +55,24 @@ const Modal: React.FC<ModalProps> = (props) => {
     >
       <ModalMainStyle onClick={onClickInside}>
         <ModalHeaderStyle>
-          <h3>{title}</h3>
-          <button type="button" onClick={onClickCloseBtn}>
+          <h3>
+            {title}
+            {link && (
+              <a href={`${link}`} target="blank">
+                <img src={LinkImage} alt="link" />
+              </a>
+            )}
+          </h3>
+          <ButtonStyle type="button" onClick={onClickCloseBtn}>
             close
-          </button>
+          </ButtonStyle>
         </ModalHeaderStyle>
         <ModalSectionStyle>
           <ModalAsideStyle>
             <p>
               <b>Contribution</b>
             </p>
-            {percent}
+            <span>{percent}%</span>
           </ModalAsideStyle>
           <ModalArticleStyle>
             {description && (
@@ -138,5 +107,53 @@ interface ModalProps extends IModal {
   showTarget: String;
   setShowTarget: (showTarget: String) => void;
 }
+
+const WrapperModalStyle = styled("div", {
+  position: "fixed",
+  top: "0",
+  left: "0",
+  width: "100%",
+  height: "100%",
+  backgroundColor: "rgba(0,0,0,0.5)",
+  paddingTop: "25vh",
+
+  "&.visible": {
+    display: "block",
+  },
+  "&.invisible": {
+    display: "none",
+  },
+});
+
+const ModalMainStyle = styled("main", {
+  width: "600px",
+  height: "300px",
+  backgroundColor: "white",
+  borderRadius: "10px",
+  margin: "auto",
+  padding: "20px",
+});
+
+const ModalHeaderStyle = styled("header", {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+
+  "& img": {
+    width: "15px",
+    height: "15px",
+    marginLeft: "10px",
+  },
+});
+
+const ModalSectionStyle = styled("section", {
+  display: "flex",
+});
+
+const ModalAsideStyle = styled("aside", {
+  width: "40%",
+});
+
+const ModalArticleStyle = styled("article", {});
 
 export default Modal;

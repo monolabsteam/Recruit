@@ -6,14 +6,20 @@ export interface IModal {
   positions: String[];
   stacks: String[];
   prize?: String;
+  link?: String;
+}
+
+export interface ISimpleProject {
+  title: String;
+  short: String;
 }
 
 export interface IProjectKeys {
-  HanaData: IModal;
-  DSRSData: IModal;
-  LIGData: IModal;
-  FCData: IModal;
-  CCData: IModal;
+  Hana: IModal;
+  DSRS: IModal;
+  LIG: IModal;
+  FC: IModal;
+  CC: IModal;
 }
 
 export type TModalTarget = "Hana" | "DSRS" | "LIG" | "FC" | "CC";

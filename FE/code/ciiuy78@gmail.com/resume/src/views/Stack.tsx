@@ -4,6 +4,50 @@ import { StackData } from "src/data/Stack";
 import { SectionStyle } from "src/styles/Common";
 import { styled } from "@stitches/react";
 
+const StackFragment: React.FC<StackFragmentProps> = (props) => {
+  const { stack, percent } = props;
+
+  const [isShowPercent, setIsShowPercent] = useState<boolean>(false);
+
+  const onMouseOverStackBar = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsShowPercent(true);
+  };
+
+  const onMouseLeaveStackBar = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsShowPercent(false);
+  };
+
+  return (
+    <StackDivStyle>
+      <p>
+        <b>{stack}</b>
+      </p>
+      <div
+        className="stack-bar-wrapper"
+        onMouseOver={onMouseOverStackBar}
+        onMouseLeave={onMouseLeaveStackBar}
+      >
+        <div className="stack-bar-fill" style={{ width: `${percent}%` }}>
+          {isShowPercent && (
+            <span>
+              <b>...{percent}%</b>
+            </span>
+          )}
+        </div>
+        <div
+          className="stack-bar-unfill"
+          style={{ width: `${100 - +percent}%` }}
+        ></div>
+      </div>
+    </StackDivStyle>
+  );
+};
+
+interface StackFragmentProps {
+  stack: String;
+  percent: Number;
+}
+
 const StackDivStyle = styled("div", {
   display: "flex",
   alignItems: "center",
@@ -52,49 +96,5 @@ const Stack: React.FC = () => {
     </SectionStyle>
   );
 };
-
-const StackFragment: React.FC<StackFragmentProps> = (props) => {
-  const { stack, percent } = props;
-
-  const [isShowPercent, setIsShowPercent] = useState<boolean>(false);
-
-  const onMouseOverStackBar = (e: React.MouseEvent<HTMLDivElement>) => {
-    setIsShowPercent(true);
-  };
-
-  const onMouseLeaveStackBar = (e: React.MouseEvent<HTMLDivElement>) => {
-    setIsShowPercent(false);
-  };
-
-  return (
-    <StackDivStyle>
-      <p>
-        <b>{stack}</b>
-      </p>
-      <div
-        className="stack-bar-wrapper"
-        onMouseOver={onMouseOverStackBar}
-        onMouseLeave={onMouseLeaveStackBar}
-      >
-        <div className="stack-bar-fill" style={{ width: `${percent}%` }}>
-          {isShowPercent && (
-            <span>
-              <b>...{percent}%</b>
-            </span>
-          )}
-        </div>
-        <div
-          className="stack-bar-unfill"
-          style={{ width: `${100 - +percent}%` }}
-        ></div>
-      </div>
-    </StackDivStyle>
-  );
-};
-
-interface StackFragmentProps {
-  stack: String;
-  percent: Number;
-}
 
 export default Stack;
