@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { ButtonStyle } from "src/styles/Common";
 import { styled } from "@stitches/react";
 
 const AccordionDivStyle = styled("div", {
@@ -43,9 +44,9 @@ const Accordion: React.FC<IArchordionProps> = (props) => {
 
   return (
     <AccordionDivStyle size={size}>
-      <button type="button" onClick={onClickArcordionBtn}>
+      <ButtonStyle type="button" onClick={onClickArcordionBtn}>
         {accordionTitle}
-      </button>
+      </ButtonStyle>
       <div
         className={`accordion-list ${isShow ? "visible" : "invisible"}`}
         ref={arcordionListRef}

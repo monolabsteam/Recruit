@@ -1,6 +1,6 @@
 import React from "react";
 import Main from "src/views/Main";
-import AboutMe from "src/views/AboutMe";
+import Interest from "src/views/Interest";
 import Career from "src/views/Career";
 import Project from "src/views/Project";
 import Stack from "src/views/Stack";
@@ -13,10 +13,10 @@ const App: React.FC = () => {
   return (
     <WrapperMainStyle>
       <Main />
-      <AboutMe />
       <Career />
       <Project />
       <Stack />
+      <Interest />
       <SideBar />
     </WrapperMainStyle>
   );

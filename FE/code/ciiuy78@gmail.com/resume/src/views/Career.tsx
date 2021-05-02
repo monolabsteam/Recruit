@@ -5,7 +5,7 @@ import { SectionStyle } from "src/styles/Common";
 
 const Career: React.FC = () => {
   return (
-    <SectionStyle>
+    <SectionStyle id="career">
       <Header>Career</Header>
       <article>
         <ul>

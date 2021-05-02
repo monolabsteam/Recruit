@@ -42,7 +42,7 @@ const DescArticleStyle = styled("article", {
 
 const Main: React.FC = () => {
   return (
-    <SectionStyle>
+    <SectionStyle id="main">
       <MainDivStyle>
         <IntroAsideStyle>
           <h1>LJ</h1>

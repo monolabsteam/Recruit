@@ -8,4 +8,23 @@ const SectionStyle = styled("section", {
   margin: "0 20vw",
 });
 
-export { SectionStyle };
+const ButtonStyle = styled("button", {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  backgroundColor: "white",
+  border: "1px solid black",
+  borderRadius: "5px",
+  minWidth: "100px",
+  height: "30px",
+  padding: "5px 10px",
+  fontWeight: "bold",
+  cursor: "pointer",
+
+  "&:hover": {
+    color: "white",
+    backgroundColor: "black",
+  },
+});
+
+export { SectionStyle, ButtonStyle };

@@ -38,7 +38,7 @@ const StackDivStyle = styled("div", {
 
 const Stack: React.FC = () => {
   return (
-    <SectionStyle>
+    <SectionStyle id="stack">
       <Header>Stack</Header>
       <article>
         {StackData.map((stack) => (
