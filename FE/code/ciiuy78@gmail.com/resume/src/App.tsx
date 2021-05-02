@@ -7,10 +7,7 @@ import Stack from "src/views/Stack";
 import SideBar from "src/components/SideBar";
 import { styled } from "@stitches/react";
 
-const WrapperMainStyle = styled("main", {
-  // width: "100%",
-  // height: "auto",
-});
+const WrapperMainStyle = styled("main", {});
 
 const App: React.FC = () => {
   return (
