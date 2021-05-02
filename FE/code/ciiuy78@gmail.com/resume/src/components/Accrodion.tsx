@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import { ButtonStyle } from "src/styles/Common";
 import { styled } from "@stitches/react";
 
 const AccordionDivStyle = styled("div", {
@@ -16,20 +15,49 @@ const AccordionDivStyle = styled("div", {
       },
     },
   },
+  borderRadius: "5px",
+
+  "& .accordion-title-wrapper": {
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "16px",
+  },
+
+  "& .colored": {
+    backgroundColor: "black",
+    color: "white",
+    "*": {
+      backgroundColor: "black",
+      color: "white",
+    },
+  },
+
+  "& button": {
+    border: "none",
+    backgroundColor: "white",
+    fontWeight: "bold",
+    cursor: "pointer",
+    borderRadius: "5px",
+  },
 
   "& .accordion-list": {
-    transition: "max-height 0.5s ease-in-out",
+    transition: "all 0.3s ease-in-out",
     overflow: "hidden",
+    paddingLeft: "30px",
   },
 
   "& .visible": {
-    maxHeight: "100px",
+    maxHeight: "50px",
+    padding: "16px",
+    paddingLeft: "30px",
   },
 
   "& .invisible": {
     maxHeight: "0px",
   },
 });
+
+const AccordionListDivStyle = styled("div", {});
 
 const Accordion: React.FC<IArchordionProps> = (props) => {
   const { accordionTitle, accordionDesc, size = "md" } = props;
@@ -44,9 +72,18 @@ const Accordion: React.FC<IArchordionProps> = (props) => {
 
   return (
     <AccordionDivStyle size={size}>
-      <ButtonStyle type="button" onClick={onClickArcordionBtn}>
-        {accordionTitle}
-      </ButtonStyle>
+      <div
+        className={`accordion-title-wrapper ${
+          isShow ? "colored" : "non-colored"
+        }`}
+      >
+        <button type="button" onClick={onClickArcordionBtn}>
+          {accordionTitle}
+        </button>
+        <button type="button" onClick={onClickArcordionBtn}>
+          {isShow ? "▲" : "▼"}
+        </button>
+      </div>
       <div
         className={`accordion-list ${isShow ? "visible" : "invisible"}`}
         ref={arcordionListRef}
@@ -59,7 +96,11 @@ const Accordion: React.FC<IArchordionProps> = (props) => {
 
 const AccordionList: React.FC<IArchordionListProps> = (props) => {
   const { accordionDesc } = props;
-  return <div className="accordion-list-desc">{accordionDesc}</div>;
+  return (
+    <AccordionListDivStyle className="accordion-list-desc">
+      {accordionDesc}
+    </AccordionListDivStyle>
+  );
 };
 
 type Size = "sm" | "md" | "lg";

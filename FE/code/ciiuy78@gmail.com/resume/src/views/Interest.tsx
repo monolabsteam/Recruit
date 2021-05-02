@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "src/components/Header";
 import { InterestData } from "src/data/Interest";
-import { IInterest } from "src/model/interest";
 import { SectionStyle } from "src/styles/Common";
 import { styled } from "@stitches/react";
 
