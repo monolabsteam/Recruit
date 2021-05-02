@@ -68,13 +68,13 @@ const DescArticleStyle = styled("article", {
     },
 
     "&.main-desc-tags": {
-      color: "blue",
+      color: "#3f81f7",
     },
 
     "& a": {
       textDecoration: "none",
       "&:visited": {
-        color: "blue",
+        color: "#3f81f7",
       },
       "& img": {
         width: "15px",

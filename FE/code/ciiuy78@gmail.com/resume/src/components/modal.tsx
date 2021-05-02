@@ -127,7 +127,7 @@ const WrapperModalStyle = styled("div", {
 
 const ModalMainStyle = styled("main", {
   width: "600px",
-  height: "300px",
+  minHeight: "200px",
   backgroundColor: "white",
   borderRadius: "10px",
   margin: "auto",
@@ -152,6 +152,13 @@ const ModalSectionStyle = styled("section", {
 
 const ModalAsideStyle = styled("aside", {
   width: "40%",
+
+  "& span": {
+    width: "100%",
+    fontSize: "60px",
+    marginLeft: "20px",
+    lineHeight: "50px",
+  },
 });
 
 const ModalArticleStyle = styled("article", {});

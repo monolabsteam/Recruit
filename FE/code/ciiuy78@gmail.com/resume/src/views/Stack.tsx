@@ -4,6 +4,23 @@ import { StackData } from "src/data/Stack";
 import { SectionStyle } from "src/styles/Common";
 import { styled } from "@stitches/react";
 
+const Stack: React.FC = () => {
+  return (
+    <SectionStyle id="stack">
+      <Header>Stack</Header>
+      <article>
+        {StackData.map((stack) => (
+          <StackFragment
+            key={`${stack.stack}`}
+            stack={stack.stack}
+            percent={stack.percent}
+          />
+        ))}
+      </article>
+    </SectionStyle>
+  );
+};
+
 const StackFragment: React.FC<StackFragmentProps> = (props) => {
   const { stack, percent } = props;
 
@@ -71,7 +88,7 @@ const StackDivStyle = styled("div", {
   },
 
   "& .stack-bar-fill": {
-    backgroundColor: "black",
+    backgroundColor: "#3f81f7",
     color: "white",
   },
 
@@ -79,22 +96,5 @@ const StackDivStyle = styled("div", {
     backgroundColor: "lightgray",
   },
 });
-
-const Stack: React.FC = () => {
-  return (
-    <SectionStyle id="stack">
-      <Header>Stack</Header>
-      <article>
-        {StackData.map((stack) => (
-          <StackFragment
-            key={`${stack.stack}`}
-            stack={stack.stack}
-            percent={stack.percent}
-          />
-        ))}
-      </article>
-    </SectionStyle>
-  );
-};
 
 export default Stack;

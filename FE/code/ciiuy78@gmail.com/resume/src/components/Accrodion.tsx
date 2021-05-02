@@ -81,10 +81,12 @@ const AccordionDivStyle = styled("div", {
   },
 
   "& .colored": {
-    backgroundColor: "black",
+    backgroundColor: "#3f81f7",
     color: "white",
+    borderBottom: "1px solid black",
+
     "*": {
-      backgroundColor: "black",
+      backgroundColor: "#3f81f7",
       color: "white",
     },
   },

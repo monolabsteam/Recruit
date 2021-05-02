@@ -68,6 +68,16 @@ const AsideStyle = styled("aside", {
     display: "flex",
     alignItems: "center",
     height: "20px",
+
+    "&:hover": {
+      "& button": {
+        backgroundColor: "#3f81f7",
+      },
+      "& .sidebar-target": {
+        color: "#3f81f7",
+        fontWeight: "bold",
+      },
+    },
   },
   "& .sidebar-target": {
     fontSize: "12px",

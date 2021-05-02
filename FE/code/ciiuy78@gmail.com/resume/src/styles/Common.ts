@@ -23,7 +23,8 @@ const ButtonStyle = styled("button", {
 
   "&:hover": {
     color: "white",
-    backgroundColor: "black",
+    backgroundColor: "#3f81f7",
+    border: "white",
   },
 });
 
